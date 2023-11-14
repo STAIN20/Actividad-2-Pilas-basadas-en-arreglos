@@ -73,6 +73,11 @@ public class Arbol <T> {
     }
   }
 
+  /**
+   * Método para la impresion del subarbol a partir de cierto nodo dependiendo del arbol
+   * en cada uno de los tipos de recorrido
+   * @param nodoSubArbol
+   */
   public void imprimirSubArbol(NodoArbol<T> nodoSubArbol) {
     System.out.println("Impresión en Prefijo: ");
     nodoSubArbol.imprimirEnPrefijo();
@@ -87,14 +92,29 @@ public class Arbol <T> {
 
   }
   
+  /**
+   * Booleano que nos retornará la comprobacion del estado del arbol, si esta vacio o no
+   * @return
+   */
   public boolean estaVacio() {
     return estaVacio;
   }
 
+  /**
+   * Metodo que nos retornara la altura obtenida del arbol correspondiente
+   * @return
+   */
   public int obtenerAltura() {
     return obtenerAltura(raiz);
   }
 
+  /**
+   * Logica detras del metodo obtener altura, utilizando un is que comprueba la existencia de un nodo,
+   * así un else que nos dara la altura con ayuda de los nodos hijos y hermanos y se le sumara 1 por el 
+   * nodo raiz
+   * @param nodo
+   * @return
+   */
   private int obtenerAltura(NodoArbol<T> nodo) {
     if (nodo == null) {
       return 0;
